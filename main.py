@@ -10,15 +10,28 @@ class CoinCollecting:
         self.gameBoard = [[0] * self.column] * self.row
         print(self.gameBoard)
 
-    def initializeTheBoard(self):
-        print(self.row*self.column/2)
-        randomList = random.sample(range(0, 30), 15)
-        print("Random list:", randomList)
-
+    def initialize_TheBoard(self):
+        random_List = random.sample(range(1, 31), 5)
+        # The relationship between matrix cell and its row & column
+        for i in random_List:
+            ch = int(i / self.column)  # 5
+            if i % self.column == 0:
+                row = ch - 1
+            else:
+                row = ch
+            column = i - row * self.column - 1
+            print(row, column)
+            self.gameBoard[row][column] = 1
+        print(self.gameBoard[0])
+        print(self.gameBoard[1])
+        print(self.gameBoard[2])
+        print(self.gameBoard[3])
+        print(self.gameBoard[4])
+        print("Random list:", random_List)
 
 
 player = CoinCollecting(5, 6)
-player.initializeTheBoard()
+player.initialize_TheBoard()
 
 # Press the green button in the gutter to run the script.
 # if __name__ == '__main__':
