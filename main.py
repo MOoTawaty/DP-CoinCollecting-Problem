@@ -45,29 +45,13 @@ class CoinCollecting:
         print(self.gameBoard[4])
 
 
-    def game_algorithm(self):
-        board_copy = []
-        board_copy = self.gameBoard
-
-        for i in self.row:  # 5 rows
-            for j in self.column:  # 6 column
-                if i == 0 and j == 0:
-                    board_copy[i][j] = 0 + board_copy[i][j]
-                elif i == 0:
-                    board_copy[i][j] = max(0, board_copy[i][j - 1]) + board_copy[i][j]
-                elif j == 0:
-                    board_copy[i][j] = max(board_copy[i - 1][j], 0) + board_copy[i][j]
-                else:
-                    board_copy[i][j] = max(board_copy[i - 1][j], board_copy[i][j - 1])+board_copy[i][j]
-
-        return board_copy[self.row-1][self.column-1]
 
 
 
 player = CoinCollecting(5, 6)
 # player.initialize_TheBoard()
 player.trying()
-player.game_algorithm()
+#player.game_algorithm()
 
 # Press the green button in the gutter to run the script.
 # if __name__ == '__main__':
