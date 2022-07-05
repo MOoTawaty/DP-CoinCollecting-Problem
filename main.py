@@ -27,6 +27,7 @@ class CoinCollecting:
         print(self.gameBoard[4])
         print("Random list:", random_List)
 
+    # this is a trying example with specific board values & the maximum coins picked is 5
     def trying(self):
         self.gameBoard[0][4] = 1
         self.gameBoard[1][1] = 1
@@ -54,7 +55,7 @@ class CoinCollecting:
                     board_copy[i][j] = max(board_copy[i - 1][j], 0) + board_copy[i][j]
                 else:
                     board_copy[i][j] = max(board_copy[i - 1][j], board_copy[i][j - 1]) + board_copy[i][j]
-            print(board_copy[i])
+            # print(board_copy[i])
 
         return board_copy[self.row - 1][self.column - 1]
 
@@ -62,7 +63,7 @@ class CoinCollecting:
 player = CoinCollecting(5, 6)
 # player.initialize_TheBoard()
 player.trying()
-print(player.game_algorithm())
+print("the maximum number of coins picked:", player.game_algorithm())
 
 # Press the green button in the gutter to run the script.
 # if __name__ == '__main__':
