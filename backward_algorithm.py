@@ -29,5 +29,4 @@ class BackwardGameAlgorithm(game_algorithm.Game):
             self.gameBoard[0][column] = '*'
             column = column - 1
 
-        for row in range(self.row):
-            print(self.gameBoard[row])
+        return self.gameBoard
