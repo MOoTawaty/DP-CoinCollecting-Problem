@@ -28,7 +28,10 @@ if __name__ == '__main__':
     # getting path in stars
     print("path in stars: ")
     b_algo = backward_algorithm.BackwardGameAlgorithm
-    b_algo.path(player)
+    robotPath = b_algo.path(player)
+
+    for i in range(row):
+        print(robotPath[i])
 
 
 
