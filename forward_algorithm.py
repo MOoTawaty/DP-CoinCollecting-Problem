@@ -3,7 +3,7 @@ import game_algorithm
 
 class ForwardGameAlgorithm(game_algorithm.Game):
 
-    def forward_game_algorithm(self):
+    def max_coin_picked(self):
 
         # this algorithm follows the dynamic programing principle
         # for the coin_collecting problem
@@ -18,7 +18,9 @@ class ForwardGameAlgorithm(game_algorithm.Game):
                 else:
                     self.gameBoard[i][j] = max(self.gameBoard[i - 1][j], self.gameBoard[i][j - 1]) + self.gameBoard[i][
                         j]
-            print(self.gameBoard[i])
+            # printing max_coin_picked algorithm steps
+            # print(self.gameBoard[i])
+
         # getting the maximum value picked from the initialized values
         maxCoinPicked = self.gameBoard[self.row - 1][self.column - 1]
         return maxCoinPicked
