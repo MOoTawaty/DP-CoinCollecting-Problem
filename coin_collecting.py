@@ -1,7 +1,5 @@
 import random
 
-import demo_example
-
 
 class CoinCollecting:
 
@@ -14,7 +12,8 @@ class CoinCollecting:
 
     # initialize the game board with random values
     def initialize_TheBoard(self):
-        random_List = random.sample(range(1, 31), 15)
+        numOfCells = self.row * self.column
+        random_List = random.sample(range(1, numOfCells + 1), int(numOfCells / 2))
         # The relationship between number of matrix cell and its row & column
         for i in random_List:
             row = int(i / self.column)  # 5
@@ -23,7 +22,7 @@ class CoinCollecting:
             column = i - row * self.column - 1
             self.gameBoard[row][column] = 1
 
+        # printing the game board
         for i in range(self.row):  # 5 rows
             print(self.gameBoard[i])
-        print('\n')
-        print("Random list:", random_List, '\n')
+        print()
